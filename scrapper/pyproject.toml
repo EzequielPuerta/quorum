@@ -1,9 +1,13 @@
 [tool.poetry]
 name = "scrapper"
 version = "0.1.0"
-description = ""
-authors = ["Ezequiel Puerta <eze19.2009@gmail.com>"]
+description = "Scrappers to obtain data from the honorable chamber of deputies of Argentina"
+authors = ["Armando Ezequiel Puerta <armando.ezequiel.puerta@gmail.com>"]
+license = "MIT License"
 readme = "README.md"
+homepage = "https://github.com/EzequielPuerta/quorum"
+repository = "https://github.com/EzequielPuerta/quorum"
+documentation = "https://github.com/EzequielPuerta/quorum"
 
 [tool.poetry.dependencies]
 python = "^3.10"
