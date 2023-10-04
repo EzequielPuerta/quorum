@@ -4,17 +4,20 @@ version = "0.1.0"
 description = "Api to expose data insights obtained from the honorable chamber of deputies of Argentina"
 authors = ["Armando Ezequiel Puerta <armando.ezequiel.puerta@gmail.com>"]
 license = "MIT License"
-readme = "README.md"
 homepage = "https://github.com/EzequielPuerta/quorum"
 repository = "https://github.com/EzequielPuerta/quorum"
 documentation = "https://github.com/EzequielPuerta/quorum"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+django = "^4.2.6"
+djangorestframework = "^3.14.0"
+psycopg2-binary = "^2.9.9"
 
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.2"
+pytest-django = "^4.5.2"
 pytest-cov = "^4.1.0"
 pre-commit = "^3.4.0"
 flake8 = "^6.1.0"
@@ -56,3 +59,7 @@ exclude = '''
                      # the root of the project
 )
 '''
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "quorum.settings"
+python_files = ["test_*.py"]
