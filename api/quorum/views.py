@@ -12,5 +12,15 @@ def api_root(request, format=None):  # type: ignore
                 request=request,
                 format=format,
             ),
+            "parties": reverse(
+                "party-list",
+                request=request,
+                format=format,
+            ),
+            "admissions": reverse(
+                "admission-list",
+                request=request,
+                format=format,
+            ),
         }
     )

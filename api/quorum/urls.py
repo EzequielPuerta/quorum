@@ -30,4 +30,5 @@ urlpatterns = [
     ),
     path("", api_root),
     path("", include("districts.urls")),
+    path("", include("parties.urls")),
 ]
