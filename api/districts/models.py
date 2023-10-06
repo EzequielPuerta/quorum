@@ -9,5 +9,8 @@ class District(Model):
     name = CharField(max_length=100, help_text="District name", unique=True)
     is_national = BooleanField(default=False)
 
+    class Meta:
+        ordering = ("name", "id", "is_national")
+
     def __str__(self) -> str:
         return f"{self.name}{' | NATIONAL' if self.is_national else ''}"
