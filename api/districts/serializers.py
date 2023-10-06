@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import District
+from districts.models import District
 
 
 class DistrictSerializer(serializers.HyperlinkedModelSerializer):

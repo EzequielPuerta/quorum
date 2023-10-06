@@ -1,6 +1,6 @@
 import pytest
 
-from ..models import District
+from districts.models import District
 
 
 @pytest.fixture

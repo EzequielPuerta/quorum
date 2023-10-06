@@ -1,6 +1,6 @@
 from django.contrib.admin import ModelAdmin, register
 
-from .models import District
+from districts.models import District
 
 
 @register(District)

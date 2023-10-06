@@ -1,7 +1,7 @@
 import pytest
 from django.db.utils import IntegrityError
 
-from ..models import District
+from districts.models import District
 
 
 def test_district_creation() -> None:
@@ -57,3 +57,4 @@ def test_district_unique(
 @pytest.mark.django_db
 def test_district_equality(persisted_district: District) -> None:
     assert [persisted_district] == [persisted_district]
+    assert {"1": persisted_district} == {"1": persisted_district}

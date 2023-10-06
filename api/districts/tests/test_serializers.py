@@ -1,26 +1,24 @@
 import pytest
 
-from ..models import District
-from ..serializers import DistrictSerializer
+from districts.models import District
+from districts.serializers import DistrictSerializer
 
 
 @pytest.mark.django_db
-def test_district_serializer_for_instance(default_district_name) -> None:
-    district = District.objects.create(
-        name=default_district_name,
-        is_national=False,
-    )
-
+def test_district_serializer_for_instance(
+    default_district_name: str,
+    persisted_district: District,
+) -> None:
     serializer = DistrictSerializer(
-        instance=district,
+        instance=persisted_district,
         context={"request": None},
     )
 
-    _id = district.id
-    assert serializer.data["id"] == district.id
+    _id = persisted_district.id
+    assert serializer.data["id"] == _id
     assert serializer.data["url"] == f"/districts/{_id}/"
-    assert serializer.data["name"] == district.name
-    assert serializer.data["is_national"] == district.is_national
+    assert serializer.data["name"] == persisted_district.name
+    assert serializer.data["is_national"] == persisted_district.is_national
 
 
 @pytest.mark.django_db
